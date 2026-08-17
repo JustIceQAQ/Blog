@@ -1,4 +1,5 @@
 # JustIceQAQ Blog
+
 [![Build and deploy](https://github.com/JustIceQAQ/Blog/actions/workflows/hugo.yaml/badge.svg)](https://github.com/JustIceQAQ/Blog/actions/workflows/hugo.yaml)
 ---
 
@@ -21,3 +22,12 @@
 
 - `Blowfish`
     - `git submodule update --remote --merge`
+
+### 自定義
+
+- `c_use_expired_alert`
+    - 下列地方設定 (優先度依次排列，越前面最優先)
+        1. *.md 內設定
+        2. params.toml > [article]
+
+    - 可以決定是否要啟動"文章過舊"提醒   

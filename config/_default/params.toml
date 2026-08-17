@@ -34,8 +34,8 @@ hotlinkFeatureImage = false
 # imagePosition = "50% 50%"
 
 # highlightCurrentMenuArea = true
-# smartTOC = true
-# smartTOCHideUnfocusedChildren = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = true
 
 fingerprintAlgorithm = "sha512" # Valid values are "sha512" (default), "sha384", "sha256"
 
@@ -53,14 +53,13 @@ storedLanguageRedirect = true # Redirect to the stored language when a matching 
 # metaDescriptionOrder = ["summary", "description", "site"] # Controls the fallback order for the HTML meta description. Valid values are "summary", "description", and "site".
 
 [header]
-layout = "basic" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
-showLanguageSwitch = false
+layout = "fixed-fill-blur" # valid options: basic, fixed, fixed-fill, fixed-gradient, fixed-fill-blur
 
 [footer]
 showMenu = true
 showCopyright = true
-showThemeAttribution = false
-showAppearanceSwitcher = true
+showThemeAttribution = true
+showAppearanceSwitcher = false
 showScrollToTop = true
 
 [homepage]
@@ -100,7 +99,7 @@ showReadingTime = true
 showTableOfContents = true
 # showRelatedContent = false
 # relatedContentLimit = 3
-showTaxonomies = false # Enable the display of taxonomies for the related article.
+showTaxonomies = true # Enable the display of taxonomies for the related article.
 showCategories = true # These will show if showTaxonomies is true.
 showTags = true # These will show if showTaxonomies is true.
 showCategoriesInSecondaryColor = false # This will change the color of category badges, so the user can better distinguish between the two. Only if showTaxonomies is true.
@@ -109,6 +108,7 @@ showWordCount = true
 # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram", "line"]
 showZenMode = false
 # externalLinkForceNewTab = false # disable to allow external links in the same tab (defaults to true)
+# c_use_expired_alert = false
 
 [list]
 showHero = false
@@ -199,3 +199,13 @@ cardViewScreenWidth = false
 
 [advertisement]
 # adsense = ""
+
+[license]
+enable = true
+titleOfWork = "Blog"
+creatorOfWork = "JustIceQAQ"
+linkToWork = "Blog"
+linkToCreatorProfile = "https://github.com/JustIceQAQ"
+name = "CC BY-NC-SA 4.0"
+url = "https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hant"
+text = "歡迎自由轉載與改作（請附上來源），禁止商業用途，且二創內容須以相同方式分享。"

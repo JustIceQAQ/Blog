@@ -1,0 +1,45 @@
+{{ if site.Params.license.enable }}
+  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+    <span>
+      本站內容採用
+      <a href="{{ site.Params.license.url }}"
+         target="_blank"
+         class="underline">{{ site.Params.license.name | default "CC BY-NC-SA 4.0" }}</a>
+      授權
+    </span>
+    <!-- 圖片區塊 -->
+    <div class="flex items-center gap-1 flex-shrink-0">
+      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+           alt="CC"
+           class="no-zoom pointer-events-none dark:invert"
+           style="width: 16px !important;
+                  height: 16px !important;
+                  max-width: none !important;
+                  display: inline-block !important" />
+      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+           alt="BY"
+           class="no-zoom pointer-events-none dark:invert"
+           style="width: 16px !important;
+                  height: 16px !important;
+                  max-width: none !important;
+                  display: inline-block !important" />
+      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+           alt="NC"
+           class="no-zoom pointer-events-none dark:invert"
+           style="width: 16px !important;
+                  height: 16px !important;
+                  max-width: none !important;
+                  display: inline-block !important" />
+      <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+           alt="SA"
+           class="no-zoom pointer-events-none dark:invert"
+           style="width: 16px !important;
+                  height: 16px !important;
+                  max-width: none !important;
+                  display: inline-block !important" />
+    </div>
+  </div>
+  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+    {{ site.Params.license.text }}
+  </div>
+{{ end }}

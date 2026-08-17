@@ -1,0 +1,5 @@
+profile = "golang"
+indent = 2
+#max_line_length = 120
+#preserve_blank_lines = true
+ignore = "H006,H025,H021"
