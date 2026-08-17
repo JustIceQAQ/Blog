@@ -70,7 +70,7 @@ googleAnalytics = "G-SHMCDKC0K2"
 enableGitInfo = true
 [frontmatter]
   date = ['date', 'publishDate']
-  lastmod = [':git', 'lastmod', 'date']
+  lastmod = [':fileModTime', ':git', 'lastmod', 'date']
 
 [permalinks]
 posts = "/:year/:month/:slug/"
