@@ -1,5 +1,5 @@
 # JustIceQAQ Blog
-
+[![Build and deploy](https://github.com/JustIceQAQ/Blog/actions/workflows/hugo.yaml/badge.svg)](https://github.com/JustIceQAQ/Blog/actions/workflows/hugo.yaml)
 ---
 
 ## 框架
