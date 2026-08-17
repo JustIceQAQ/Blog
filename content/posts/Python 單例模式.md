@@ -2,7 +2,7 @@
 title: 'Python 單例模式'
 date: '2026-08-17T13:16:08+08:00'
 draft: false
-tags: [ "Python" , "設計模式" ]
+tags: [ "Python" , "設計模式", "單例模式" ]
 slug: '/python-singleton-pattern/'
 ---
 
@@ -77,7 +77,7 @@ from demo_single import ds_obj
 
 ### 3. 利用 lru_cache 快取物件
 
-- 如果不想用透過全域變數控制，也不想透過`__new__`新增，可以使用lru_cache來快取物件
+- 如果不想用透過全域變數控制，也不想透過`__new__`新增，可以使用`lru_cache`來快取物件
 - 既可達到單例化物件的效果，同時可降低理解程式時的認知負荷 (Cognitive Load[^Cognitive load])
 
 ```python
