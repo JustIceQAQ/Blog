@@ -10,6 +10,8 @@ disableLanguageSwitches = true
 enableRobotsTXT = true
 summaryLength = 0
 
+timeZone = "Asia/Taipei"
+
 buildDrafts = false
 buildFuture = false
 
@@ -70,7 +72,7 @@ googleAnalytics = "G-SHMCDKC0K2"
 enableGitInfo = true
 [frontmatter]
   date = ['date', 'publishDate']
-  lastmod = [':fileModTime', ':git', 'lastmod', 'date']
+  lastmod = [':git', 'lastmod', ':fileModTime', 'date']
 
 [permalinks]
 posts = "/:year/:month/:slug/"
