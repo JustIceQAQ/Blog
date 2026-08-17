@@ -6,15 +6,18 @@
 
 - `Hugo` + `Blowfish`
 
-## 開發 / 測試 / 更新
+## 新文章
 
-- `hugo server`
+- `hugo new posts/你的文章檔名.md`
 
-### 更新
+## 服務啟動
+
+- `hugo server --disableFastRender`
+
+### 版本更新
 
 - `Hugo`
     - `hugo mod get -u`
 
-
-- `Blowfish` 版本更新
+- `Blowfish`
     - `git submodule update --remote --merge`
