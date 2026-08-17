@@ -143,3 +143,7 @@ vite.config.ts.timestamp-*
 .vite/
 .idea/
 .wakatime-project
+
+public/
+resources/
+.hugo_build.lock
