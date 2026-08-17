@@ -44,10 +44,12 @@ ds1 is ds2
 # True
 ```
 
-### 更 Pythonic 的作法
+---
 
-根據Python 官方文件[^how-do-i-share-global-variables-across-modules]的建議，利用 Python 模組在首次 import
-時只會執行並快取一次的特性，直接定義模組級物件
+### 2. 更 Pythonic 的作法
+
+- 根據Python 官方文件[^how-do-i-share-global-variables-across-modules]的建議，利用 Python 模組在首次 import
+  時只會執行並快取一次的特性，直接定義模組級物件
 
 ```python
 # demo_single.py
@@ -64,11 +66,19 @@ ds_obj = DemoSingle(1, 2)
 from demo_single import ds_obj
 
 ...
+
+# b.py
+from demo_single import ds_obj
+
+...
 ```
 
-### 工廠函式 + 快取（兼顧延遲載入與低認知負荷）
+---
 
-- 如果不想用全域變數的作法，又不想透過`__new__`處理，避免程式理解時帶來的認知負荷 (Cognitive Load)
+### 3. 利用 lru_cache 快取物件
+
+- 如果不想用透過全域變數控制，也不想透過`__new__`新增，可以使用lru_cache來快取物件
+- 既可達到單例化物件的效果，同時可降低理解程式時的認知負荷 (Cognitive Load[^Cognitive load])
 
 ```python
 from functools import lru_cache
@@ -88,3 +98,4 @@ def get_demo_single() -> DemoSingle:
 
 [^singleton]: https://python-patterns.guide/gang-of-four/singleton/
 [^how-do-i-share-global-variables-across-modules]: https://docs.python.org/3/faq/programming.html#how-do-i-share-global-variables-across-modules
+[^Cognitive load]:https://zh.wikipedia.org/zh-tw/%E8%AA%8D%E7%9F%A5%E8%B2%A0%E8%8D%B7
