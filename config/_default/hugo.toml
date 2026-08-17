@@ -6,7 +6,7 @@ theme = "blowfish" # UNCOMMENT THIS LINE
 baseURL = "https://blog.justiceqaq.dev/"
 defaultContentLanguage = "zh-tw"
 pluralizeListTitles = "false" # hugo function useful for non-english languages, find out more in  https://gohugo.io/getting-started/configuration/#pluralizelisttitles
-
+disableLanguageSwitches = true
 enableRobotsTXT = true
 summaryLength = 0
 
@@ -74,3 +74,7 @@ enableGitInfo = true
 
 [permalinks]
 posts = "/:year/:month/:slug/"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'

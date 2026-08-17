@@ -4,7 +4,7 @@
 
 ## 框架
 
-- `Hugo` +Blowfish`
+- `Hugo` + `Blowfish`
 
 ## 開發 / 測試 / 更新
 
