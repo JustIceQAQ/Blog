@@ -1,5 +1,5 @@
 {{ if site.Params.license.enable }}
-  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
     <span>
       本站內容採用
       <a href="{{ site.Params.license.url }}"
@@ -9,37 +9,96 @@
     </span>
     <!-- 圖片區塊 -->
     <div class="flex items-center gap-1 flex-shrink-0">
-      <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-           alt="CC"
-           class="no-zoom pointer-events-none dark:invert"
-           style="width: 16px !important;
+        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+             alt="CC"
+             class="no-zoom pointer-events-none dark:invert"
+             style="width: 16px !important;
                   height: 16px !important;
                   max-width: none !important;
-                  display: inline-block !important" />
-      <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-           alt="BY"
-           class="no-zoom pointer-events-none dark:invert"
-           style="width: 16px !important;
+                  display: inline-block !important"/>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+             alt="BY"
+             class="no-zoom pointer-events-none dark:invert"
+             style="width: 16px !important;
                   height: 16px !important;
                   max-width: none !important;
-                  display: inline-block !important" />
-      <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
-           alt="NC"
-           class="no-zoom pointer-events-none dark:invert"
-           style="width: 16px !important;
+                  display: inline-block !important"/>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+             alt="NC"
+             class="no-zoom pointer-events-none dark:invert"
+             style="width: 16px !important;
                   height: 16px !important;
                   max-width: none !important;
-                  display: inline-block !important" />
-      <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
-           alt="SA"
-           class="no-zoom pointer-events-none dark:invert"
-           style="width: 16px !important;
+                  display: inline-block !important"/>
+        <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+             alt="SA"
+             class="no-zoom pointer-events-none dark:invert"
+             style="width: 16px !important;
                   height: 16px !important;
                   max-width: none !important;
-                  display: inline-block !important" />
+                  display: inline-block !important"/>
     </div>
-  </div>
-  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+</div>
+<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
     {{ site.Params.license.text }}
-  </div>
+</div>
 {{ end }}
+<div class="flex w-full items-center justify-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 italic mt-1">
+    <span id="random-quote"></span>
+</div>
+<script>
+    (function () {
+        const quotes = {{ site.Data.quotes | jsonify | safeJS }};
+        if (quotes && quotes.length > 0) {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const target = document.getElementById('random-quote');
+            if (target) {
+                target.textContent = quotes[randomIndex];
+            }
+        }
+    })();
+
+
+    (function () {
+        const element = new Image();
+        const chat = (sender, message, style) => {
+            console.log(`%c ${sender} %c ${message} `, style.sender, style.message);
+        };
+
+        const context = async () => {
+            const styles = {
+                user: {
+                    sender: 'background: #0084ff; color: white; border-radius: 3px 0 0 3px; padding: 2px 5px; font-weight: bold;',
+                    message: 'background: #e4e6eb; color: #050505; border-radius: 0 3px 3px 0; padding: 2px 8px;'
+                }
+            };
+
+            const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+            chat('JustIceQAQ', '?', styles.user);
+            await delay(1000);
+            chat('JustIceQAQ', '???', styles.user);
+            await delay(1000);
+            chat('JustIceQAQ', '你在幹嘛? 你期待能找到什麼嗎?', styles.user);
+        };
+        let devtoolsOpen = false;
+
+        Object.defineProperty(element, 'id', {
+            get: function () {
+                devtoolsOpen = true;
+                context()
+                return '';
+            }
+        });
+
+        window.addEventListener('keydown', function (event) {
+            if (event.key === 'F12' || event.code === 'F12') {
+                context()
+            }
+            if ((event.ctrlKey || event.metaKey) && event.shiftKey && (event.key === 'I' || event.key === 'i')) {
+                context()
+            }
+        });
+    })();
+
+</script>
