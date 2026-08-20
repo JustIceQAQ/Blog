@@ -2,7 +2,7 @@
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: '{{ .Date }}'
 draft: true
-tags: [ "python" ]
+tags: [ "Python" ]
 ---
 
 ## 說明
@@ -10,9 +10,5 @@ tags: [ "python" ]
 ----
 
 ## 範例
-
-----
-
-## 參考資料
 
 ----
