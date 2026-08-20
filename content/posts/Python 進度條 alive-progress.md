@@ -2,7 +2,8 @@
 title: 'Python 進度條 - alive-progress'
 date: '2026-08-20T10:50:35+08:00'
 draft: false
-tags: [ "Python", "Package", "alive-progress" ]
+tags: [ "Python", "alive-progress" ]
+categories: [ "Package" ]
 slug: '/python-package-alive-progress/'
 ---
 

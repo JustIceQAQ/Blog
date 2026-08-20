@@ -3,7 +3,8 @@ title: 'Python 單例模式'
 date: '2026-08-17T13:16:08+08:00'
 lastmod: '2026-08-18T13:16:08+08:00'
 draft: false
-tags: [ "Python" , "設計模式", "單例模式" ]
+tags: [ "Python" , "單例模式" ]
+categories: [ "設計模式" ]
 slug: '/python-singleton-pattern/'
 ---
 
