@@ -69,10 +69,10 @@ name = 'fragmentrefs'
 type = 'fragments'
 weight = 10
 
-enableGitInfo = false
+enableGitInfo = true
 [frontmatter]
 date = ['date', 'publishDate']
-lastmod = [':fileModTime', 'lastmod', 'date']
+lastmod = [':git', 'lastmod', ':fileModTime', 'date']
 
 [permalinks]
 posts = "/:year/:month/:slug/"
