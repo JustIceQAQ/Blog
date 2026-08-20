@@ -72,7 +72,7 @@ weight = 10
 enableGitInfo = true
 [frontmatter]
 date = ['date', 'publishDate']
-lastmod = [':git', 'lastmod', ':fileModTime', 'date']
+lastmod = ['lastmod', ':git', ':fileModTime', 'date']
 
 [permalinks]
 posts = "/:year/:month/:slug/"
