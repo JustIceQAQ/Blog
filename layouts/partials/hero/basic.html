@@ -1,0 +1,15 @@
+{{ $heroUrl := .Params.heroImage }}
+{{ if not $heroUrl }}
+  {{ $saltedString := printf "%s_%s" .Content site.Params.c_hero.salt_key  }}
+  {{ $seed := ($saltedString | sha256) | sha256 }}
+  {{ $heroUrl = printf site.Params.c_hero.base_hero_url $seed }}
+{{ end }}
+<div class="hero-basic">
+  <img src="{{ $heroUrl }}"
+       role="presentation"
+       loading="eager"
+       decoding="async"
+       fetchpriority="high"
+       alt="{{ .Title }}"
+       class="w-full h-full nozoom object-cover" />
+</div>

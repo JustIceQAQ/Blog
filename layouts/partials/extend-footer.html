@@ -1,5 +1,5 @@
 {{ if site.Params.license.enable }}
-<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
     <span>
       本站內容採用
       <a href="{{ site.Params.license.url }}"
@@ -9,42 +9,57 @@
     </span>
     <!-- 圖片區塊 -->
     <div class="flex items-center gap-1 flex-shrink-0">
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-Hant"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="CC BY-NC-SA 4.0 國際授權條款 (姓名標示 - 非商業性 - 相同方式分享)"
+         class="inline-flex items-center gap-1">
+        <!-- 內層圖片設為裝飾性 (alt="")，由外層 aria-label 負責讀取完整說明 -->
         <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-             alt="CC"
+             alt=""
+             loading="lazy"
+             decoding="async"
              class="no-zoom pointer-events-none dark:invert"
              style="width: 16px !important;
-                  height: 16px !important;
-                  max-width: none !important;
-                  display: inline-block !important"/>
+                    height: 16px !important;
+                    max-width: none !important;
+                    display: inline-block !important" />
         <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-             alt="BY"
+             alt=""
+             loading="lazy"
+             decoding="async"
              class="no-zoom pointer-events-none dark:invert"
              style="width: 16px !important;
-                  height: 16px !important;
-                  max-width: none !important;
-                  display: inline-block !important"/>
+                    height: 16px !important;
+                    max-width: none !important;
+                    display: inline-block !important" />
         <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
-             alt="NC"
+             alt=""
+             loading="lazy"
+             decoding="async"
              class="no-zoom pointer-events-none dark:invert"
              style="width: 16px !important;
-                  height: 16px !important;
-                  max-width: none !important;
-                  display: inline-block !important"/>
+                    height: 16px !important;
+                    max-width: none !important;
+                    display: inline-block !important" />
         <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
-             alt="SA"
+             alt=""
+             loading="lazy"
+             decoding="async"
              class="no-zoom pointer-events-none dark:invert"
              style="width: 16px !important;
-                  height: 16px !important;
-                  max-width: none !important;
-                  display: inline-block !important"/>
+                    height: 16px !important;
+                    max-width: none !important;
+                    display: inline-block !important" />
+      </a>
     </div>
-</div>
-<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+  </div>
+  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
     {{ site.Params.license.text }}
-</div>
+  </div>
 {{ end }}
 <div class="flex w-full items-center justify-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 italic mt-1">
-    <span id="random-quote"></span>
+  <span id="random-quote"></span>
 </div>
 <script>
     (function () {
