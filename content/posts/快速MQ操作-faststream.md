@@ -4,6 +4,7 @@ date: '2026-08-24T12:49:27+08:00'
 draft: false
 tags: [ "Python", "faststream", "fastapi" ]
 categories: [ "Package", "Message Queue" ]
+slug: '/python-package-faststream/'
 ---
 
 ## 說明
