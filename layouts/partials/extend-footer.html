@@ -66,10 +66,16 @@
         const quotes = {{ site.Data.quotes | jsonify | safeJS }};
         if (quotes && quotes.length > 0) {
             const randomIndex = Math.floor(Math.random() * quotes.length);
+            const selectedQuote = quotes[randomIndex];
             const target = document.getElementById('random-quote');
-            if (target) {
-                target.textContent = quotes[randomIndex];
+
+            if (target && typeof selectedQuote === 'string') {
+            if (selectedQuote.trim().toLowerCase().startsWith('<a')) {
+                target.innerHTML = selectedQuote;
+            } else {
+                target.textContent = selectedQuote;
             }
+        }
         }
     })();
 
