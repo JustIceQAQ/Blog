@@ -11,7 +11,7 @@ slug: '/python-play-ruten-api/'
 
 - 最近無聊，總之知道露天市集有API可以申請[^官方文件]，所以就弄一組來玩玩了。
 - 任何申請或問題，請詳閱官方文件內文。
-- API文件分為下列PDF
+- API 文件分為下列 PDF
     - 商品檔案
     - 訂單檔案
     - 通知檔案
@@ -21,12 +21,14 @@ slug: '/python-play-ruten-api/'
 ## 注意事項
 
 - PDF 中在「1.2簽章製作」這個章節會卡關一陣子，因為全部 API 不論什麼 Method，每打一次 API 都需要帶上這個"簽章"
-- 也因文件中的範例是以 PHP 為例，所以在使用 Python 實踐時，一旦出現錯誤，我就需要先觀察PHP中這個函式return了什麼，那Python是否能變出一樣的格式。
+- 也因文件中的範例是以 PHP 為例，所以在使用 Python 實踐時，一旦出現錯誤，我就需要先觀察 PHP 中這個函式 return
+  了什麼，那Python是否能變出一樣的格式。
 - 簽章演算法主要是使用`HMAC-SHA256`[^HMAC]
-  ，相較於只使用SHA256直接對資料產生雜湊值，透過HMAC方法讓金鑰也參與雜湊值的產生。在金鑰只有Server/Client雙方知道的情況下，Cracker即使拿到資料，也無法產生出一樣的簽章。
-- 加上露天API會多提供Salt Key 並要求你加進`HMAC-SHA256`參與簽章的產生，只能能說加了鹽就更安全。
+  ，相較於只使用 SHA256 直接對資料產生雜湊值，透過 HMAC 方法讓金鑰也參與雜湊值的產生。在金鑰只有 Server/Client
+  雙方知道的情況下，Cracker 即使拿到資料，也無法產生出一樣的簽章。
+- 加上露天 API 會多提供 Salt Key 並要求你加進`HMAC-SHA256`參與簽章的產生，只能說加了鹽就更安全。
 - <span style="background-color: black; color: black; user-select: text;">
-   但...API Key, Secret Key與Salt Key都是由露天提供，即使加了Salt Key增加混淆，且Secret Key參與雜奏值運算，但還是無法達成資安理論上的『不可否認性』
+   但...API Key, Secret Key 與 Salt Key 都是由露天提供，即使加了 Salt Key 增加混淆，且 Secret Key 參與雜奏值運算，但還是無法達成資安理論上的『不可否認性』
   如果你看到了這段話，想了解為何，自己去查或去問AI。
   </span>
 
@@ -36,8 +38,8 @@ slug: '/python-play-ruten-api/'
 
 ### 1.2 簽章製作
 
-- Python有內建提供`hmac`與`hashlib`兩個元件可供載入，組合出文件要求的`HMAC-SHA256`，以下是我進一步在整合成 class，更方便我自己使用
-- 其中`body`我這樣寫是對的，如果是GET method，文件要求是""字串，不是`None`
+- Python 有內建提供`hmac`與`hashlib`兩個元件可供載入，組合出文件要求的`HMAC-SHA256`，以下是我再進一步整合成 class，更方便我自己使用
+- 其中`body`我這樣寫是對的，如果是 GET method，文件要求是 "" 字串，不是`None`
 
 ```python
 import datetime as dt
@@ -94,7 +96,7 @@ $header = [
 ];
 ```
 
-呃...我就改成，然後就通過了。
+呃...我就改成以下這樣，然後就通過了。
 
 ```python
 import httpx2
