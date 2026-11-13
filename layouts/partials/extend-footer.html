@@ -1,5 +1,5 @@
 {{ if site.Params.license.enable }}
-  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
     <span>
       本站內容採用
       <a href="{{ site.Params.license.url }}"
@@ -9,81 +9,100 @@
     </span>
     <!-- 圖片區塊 -->
     <div class="flex items-center gap-1 flex-shrink-0">
-      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-Hant"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="CC BY-NC-SA 4.0 國際授權條款 (姓名標示 - 非商業性 - 相同方式分享)"
-         class="inline-flex items-center gap-1">
-        <!-- 內層圖片設為裝飾性 (alt="")，由外層 aria-label 負責讀取完整說明 -->
-        <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
-             alt=""
-             loading="lazy"
-             decoding="async"
-             class="no-zoom pointer-events-none dark:invert"
-             style="width: 16px !important;
+        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-Hant"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="CC BY-NC-SA 4.0 國際授權條款 (姓名標示 - 非商業性 - 相同方式分享)"
+           class="inline-flex items-center gap-1">
+            <!-- 內層圖片設為裝飾性 (alt="")，由外層 aria-label 負責讀取完整說明 -->
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg"
+                 alt=""
+                 loading="lazy"
+                 decoding="async"
+                 class="no-zoom pointer-events-none dark:invert"
+                 style="width: 16px !important;
                     height: 16px !important;
                     max-width: none !important;
-                    display: inline-block !important" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
-             alt=""
-             loading="lazy"
-             decoding="async"
-             class="no-zoom pointer-events-none dark:invert"
-             style="width: 16px !important;
+                    display: inline-block !important"/>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg"
+                 alt=""
+                 loading="lazy"
+                 decoding="async"
+                 class="no-zoom pointer-events-none dark:invert"
+                 style="width: 16px !important;
                     height: 16px !important;
                     max-width: none !important;
-                    display: inline-block !important" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
-             alt=""
-             loading="lazy"
-             decoding="async"
-             class="no-zoom pointer-events-none dark:invert"
-             style="width: 16px !important;
+                    display: inline-block !important"/>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg"
+                 alt=""
+                 loading="lazy"
+                 decoding="async"
+                 class="no-zoom pointer-events-none dark:invert"
+                 style="width: 16px !important;
                     height: 16px !important;
                     max-width: none !important;
-                    display: inline-block !important" />
-        <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
-             alt=""
-             loading="lazy"
-             decoding="async"
-             class="no-zoom pointer-events-none dark:invert"
-             style="width: 16px !important;
+                    display: inline-block !important"/>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg"
+                 alt=""
+                 loading="lazy"
+                 decoding="async"
+                 class="no-zoom pointer-events-none dark:invert"
+                 style="width: 16px !important;
                     height: 16px !important;
                     max-width: none !important;
-                    display: inline-block !important" />
-      </a>
+                    display: inline-block !important"/>
+        </a>
     </div>
-  </div>
-  <div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+</div>
+<div class="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
     {{ site.Params.license.text }}
-  </div>
+</div>
 {{ end }}
 <div class="flex w-full items-center justify-center gap-2 text-sm text-neutral-500 dark:text-neutral-400 italic mt-1">
-  <span id="random-quote"></span>
+    <span id="random-quote"></span>
 </div>
 <script>
     (function () {
-        const quotes = {{ site.Data.quotes | jsonify | safeJS }};
+        const quotes = {{ site.Data.quotes | jsonify | safeJS }}
+        ;
         if (quotes && quotes.length > 0) {
             const randomIndex = Math.floor(Math.random() * quotes.length);
             const selectedQuote = quotes[randomIndex];
             const target = document.getElementById('random-quote');
 
             if (target && typeof selectedQuote === 'string') {
-            if (selectedQuote.trim().toLowerCase().startsWith('<a')) {
-                target.innerHTML = selectedQuote;
-            } else {
-                target.textContent = selectedQuote;
+                if (selectedQuote.trim().toLowerCase().startsWith('<a')) {
+                    target.innerHTML = selectedQuote;
+                } else {
+                    target.textContent = selectedQuote;
+                }
             }
-        }
         }
     })();
 
 
     (function () {
+
+
+        const playSound = (volume = 0.3) => {
+            try {
+                const audioSrc = {{ "audio/chillbroo-vine-boom-sound.mp3" | relURL }};
+                const audio = new Audio(audioSrc);
+                audio.volume = volume;
+                audio.currentTime = 0;
+                audio.play().catch(error => {
+                    console.warn("播放音效失敗：", error);
+                });
+            } catch (e) {
+                console.error("音效初始化錯誤：", e);
+            }
+        };
+
         const element = new Image();
-        const chat = (sender, message, style) => {
-            console.log(`%c ${sender} %c ${message} `, style.sender, style.message);
+        const chat = (sender, message, style, fontSize = 16) => {
+            const dynamicSenderStyle = `${style.sender} font-size: ${fontSize}px;`;
+            const dynamicMessageStyle = `${style.message} font-size: ${fontSize}px;`;
+            console.log(`%c ${sender} %c ${message} `, dynamicSenderStyle, dynamicMessageStyle);
         };
 
         const context = async () => {
@@ -93,14 +112,26 @@
                     message: 'background: #e4e6eb; color: #050505; border-radius: 0 3px 3px 0; padding: 2px 8px;'
                 }
             };
-
             const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
-
             chat('JustIceQAQ', '?', styles.user);
             await delay(1000);
             chat('JustIceQAQ', '???', styles.user);
             await delay(1000);
-            chat('JustIceQAQ', '你在幹嘛? 你期待能找到什麼嗎?', styles.user);
+            chat('JustIceQAQ', '?????', styles.user);
+            await delay(1000);
+            chat('JustIceQAQ', '你在幹嘛?', styles.user);
+            await delay(2000);
+            chat('JustIceQAQ', '你期待能找到什麼嗎?', styles.user);
+            await delay(2000);
+            playSound();
+            chat('JustIceQAQ', '🤨', styles.user, 100);
+            await delay(2000);
+            playSound();
+            chat('JustIceQAQ', '👎👎👎', styles.user, 100);
+            await delay(2000);
+            playSound();
+            chat('JustIceQAQ', '💩💩💩', styles.user, 100);
+
         };
         let devtoolsOpen = false;
 
