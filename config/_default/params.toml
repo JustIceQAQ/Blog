@@ -76,7 +76,8 @@ disableHeroImageFilter = false # only used when layout equals hero
 
 
 [c_hero]
-base_hero_url = "https://picsum.photos/seed/%s/1200/600"
+# base_hero_url = "https://picsum.photos/seed/%s/1200/600"
+base_hero_url = "https://api.dicebear.com/10.x/shapes/svg?seed=%s"
 salt_key = "JustIceQAQ"
 
 [article]

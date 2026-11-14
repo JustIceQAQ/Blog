@@ -1,0 +1,9 @@
+.hero-basic img {
+    height: 200px !important;
+}
+
+@media (min-width: 768px) {
+    .hero-basic img {
+        height: 240px !important;
+    }
+}
