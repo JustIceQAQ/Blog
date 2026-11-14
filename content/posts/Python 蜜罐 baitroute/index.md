@@ -2,7 +2,7 @@
 title: 'Python 蜜罐 baitroute'
 date: '2026-09-21T22:25:23+08:00'
 draft: false
-tags: [ "Python", "alive-progress" ]
+tags: [ "Python" ]
 categories: [ "Package", "資訊安全", "API" ]
 slug: '/python-package-baitroute/'
 ---
