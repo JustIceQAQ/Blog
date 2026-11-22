@@ -131,7 +131,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5
         with:
-          include-hidden-files: false
+          include-hidden-files: true
           path: ./public
   deploy:
     runs-on: ubuntu-latest
