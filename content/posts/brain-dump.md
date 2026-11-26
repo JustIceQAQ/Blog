@@ -7,6 +7,8 @@ categories: [ "網路上看到的" ]
 slug: '/brain-dump/'
 ---
 
+> 原始文章: https://www.scribd.com/document/1010798515/1772629031936
+
 ## 說明
 
 - 在 15 分鐘內清空大腦、減輕壓力並集中注意力。

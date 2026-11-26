@@ -7,6 +7,8 @@ categories: [ "網路上看到的", "Unittest" ]
 slug: '/F.I.R.S.T/'
 ---
 
+> 原始文章: https://github.com/tekguard/Principles-of-Unit-Testing
+
 ## TL;DR
 
 - 需執行的測試

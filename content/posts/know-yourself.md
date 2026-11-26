@@ -7,6 +7,9 @@ categories: [ "網路上看到的", "認識你自己" ]
 slug: '/know-yourself/'
 ---
 
+
+> 原始文章: https://muratbuffalo.blogspot.com/2024/06/know-yourself.html
+
 ## 前言
 
 - 我們常說，天生我材必有用。
